@@ -1,0 +1,23 @@
+[
+    {
+        "ID": 1,
+        "Description": "Buy groceries",
+        "Completed": false,
+        "CreatedAt": "2026-05-18T23:40:10.587942+01:00",
+        "CompletedAt": null
+    },
+    {
+        "ID": 2,
+        "Description": "Walk the dog",
+        "Completed": false,
+        "CreatedAt": "2026-05-18T23:40:10.587942+01:00",
+        "CompletedAt": null
+    },
+    {
+        "ID": 3,
+        "Description": "Read a book",
+        "Completed": false,
+        "CreatedAt": "2026-05-18T23:40:10.587943+01:00",
+        "CompletedAt": null
+    }
+]
