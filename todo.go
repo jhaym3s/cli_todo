@@ -89,7 +89,7 @@ func (t TodoList) PrintAll() {
 	for _, todo := range t {
 		if todo.Completed {
 			completed = "✅"
-			completedAt = todo.CompletedAt.Format("2006-01-02 15")
+			completedAt = todo.CompletedAt.Format("2006-01-02 15:04:05")
 		}
 		table.AddRow(strconv.Itoa(todo.ID), todo.Description, completed, todo.CreatedAt.Format("2006-01-02 15:04:05"), completedAt)
 	}
