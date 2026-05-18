@@ -2,7 +2,11 @@ package main
 
 import (
 	"errors"
+	"os"
+	"strconv"
 	"time"
+
+	"github.com/aquasecurity/table"
 )
 
 type Todo struct {
@@ -71,5 +75,23 @@ func (t *TodoList) MarkCompleted(id int) error {
 		todos[id].CompletedAt = &now
 	}
 	todos[id].Completed = !isCompleted
+	
 	return nil
+}
+
+
+func (t TodoList) PrintAll() {
+	table := table.New(os.Stdout)
+	table.SetRowLines(false)
+	table.SetHeaders("ID", "Description", "Completed", "Created At", "Completed At")
+	completed := "❌"
+	completedAt := ""
+	for _, todo := range t {
+		if todo.Completed {
+			completed = "✅"
+			completedAt = todo.CompletedAt.Format("2006-01-02 15")
+		}
+		table.AddRow(strconv.Itoa(todo.ID), todo.Description, completed, todo.CreatedAt.Format("2006-01-02 15:04:05"), completedAt)
+	}
+	table.Render()
 }
