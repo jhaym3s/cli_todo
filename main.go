@@ -8,7 +8,9 @@ func main(){
 	// todoList.Add("Buy groceries")
 	// todoList.Add("Walk the dog")
 	// todoList.Add("Read a book")
+	cmdFlags := NewCmdFlags()
+	cmdFlags.ExecuteFlags(&todoList)
 	storage.Save(todoList)
-	todoList.PrintAll()
+	
 	
 }	
